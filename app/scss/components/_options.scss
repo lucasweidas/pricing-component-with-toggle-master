@@ -1,0 +1,13 @@
+@use '../abstracts' as *;
+
+.options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: rem(24);
+  margin-block: rem(40) rem(80);
+
+  &__label {
+    color: var(--blue-4);
+  }
+}

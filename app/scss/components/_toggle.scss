@@ -1,0 +1,45 @@
+@use '../abstracts' as *;
+
+.toggle {
+  &__checkbox {
+    width: 0;
+    position: absolute;
+    opacity: 0;
+    appearance: none;
+  }
+
+  &__custom {
+    --toggle-width: 3.5rem;
+    --toggle-height: 2rem;
+    --toggle-padding: 0.25rem;
+    width: var(--toggle-width);
+    height: var(--toggle-height);
+    display: block;
+    position: relative;
+    background: var(--linear-gradient-1);
+    border-radius: calc(var(--toggle-height) / 2);
+    padding: var(--toggle-padding);
+    transition: opacity var(--duration-2) ease;
+    cursor: pointer;
+
+    &:hover,
+    .toggle__checkbox:focus-visible + & {
+      opacity: 0.7;
+    }
+
+    &::after {
+      content: '';
+      --toggle-circle-size: calc(var(--toggle-height) - (var(--toggle-padding) * 2));
+      display: block;
+      width: var(--toggle-circle-size);
+      height: var(--toggle-circle-size);
+      background-color: var(--white);
+      border-radius: 50%;
+      transition: transform var(--duration-2) ease;
+
+      .toggle__checkbox:checked + & {
+        transform: translateX(100%);
+      }
+    }
+  }
+}

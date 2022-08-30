@@ -1,0 +1,31 @@
+@use '../abstracts' as *;
+
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url('../images/bg-top.svg') top -35px right -195px no-repeat, url('../images/bg-bottom.svg') bottom left -180px no-repeat;
+  padding: rem(70) rem(24);
+
+  @include breakpoint(medium) {
+    background-position: top right -80px, bottom left;
+  }
+
+  @include breakpoint(large) {
+    background-position: top right, bottom left;
+  }
+
+  &__cards {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: rem(32);
+
+    @include breakpoint(large) {
+      flex-direction: row;
+    }
+  }
+}

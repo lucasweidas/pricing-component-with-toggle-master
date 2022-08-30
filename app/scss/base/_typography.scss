@@ -1,0 +1,37 @@
+@use '../abstracts' as *;
+
+:root {
+  --ff-montserrat: 'Montserrat', sans-serif;
+  --fs-1: 0.813rem;
+  --fs-2: 0.938rem;
+  --fs-3: 1.125rem;
+  --fs-4: 2rem;
+  --fs-5: 2.5rem;
+  --fs-6: 4.5rem;
+  --fw-7: 700;
+
+  @include breakpoint-down(small) {
+    --fs-5: clamp(1.5rem, 8vw, 2.5rem);
+    --fs-6: clamp(3rem, 16vw, 4.5rem);
+  }
+
+  @include breakpoint(large) {
+    --fs-5: clamp(2.125rem, 3.3vw, 2.5rem);
+    --fs-6: clamp(4rem, 6vw, 4.5rem);
+  }
+}
+
+body {
+  font-family: var(--ff-montserrat);
+  font-size: var(--fs-2);
+  font-weight: var(--fw-7);
+}
+
+h1 {
+  font-size: var(--fs-4);
+  color: var(--blue-6);
+}
+
+h2 {
+  font-size: var(--fs-3);
+}
